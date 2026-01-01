@@ -33,43 +33,7 @@ This project demonstrates real-world backend design patterns used in product-bas
 - **Postman / Browser Fetch API**
 
 ---
-## 🧱 Project Structure
 
-Spring-Boot-API
-├── src
-│ ├── main
-│ │ ├── java
-│ │ │ └── com.prajjwal.DemoSpring
-│ │ │ ├── Controller
-│ │ │ │ ├── AuthController.java
-│ │ │ │ ├── ProductController.java
-│ │ │ │ ├── AdminUserController.java
-│ │ │ │ └── UserRegister.java
-│ │ │ ├── Services
-│ │ │ │ ├── ProductService.java
-│ │ │ │ └── UserService.java
-│ │ │ ├── Repository
-│ │ │ │ ├── ProductRepository.java
-│ │ │ │ └── UserRepository.java
-│ │ │ ├── Model
-│ │ │ │ ├── UserEntity.java
-│ │ │ │ ├── Product.java
-│ │ │ │ ├── JwtFilter.java
-│ │ │ │ └── JwtUtility.java
-│ │ │ ├── DTO
-│ │ │ │ └── RoleUpdateRequest.java
-│ │ │ └── config
-│ │ │ └── SecurityConfig.java
-│ │ └── resources
-│ │ ├── static
-│ │ └── application.properties.example
-│ └── test
-├── pom.xml
-├── README.md
-└── .gitignore
-
-
----
 
 ## 🔐 Authentication Flow (JWT)
 
@@ -102,7 +66,9 @@ Spring-Boot-API
 ### 🔓 Public APIs
 
 #### Login
+
 POST /auth/login
+
 
 ```json
 {
@@ -115,6 +81,7 @@ POST /auth/login
 
 POST /signup/register
 
+
 👤 User APIs (JWT Required)
 
 | Method | Endpoint                                          |
@@ -125,6 +92,7 @@ POST /signup/register
 | PUT    | /api/user/product                                 |
 | GET    | /api/user/product/search?name=phone&minPrice=1000 |
 
+
 #### Admin APIs (ADMIN Role Required)
 
 | Method | Endpoint                   |
@@ -133,6 +101,7 @@ POST /signup/register
 | GET    | /api/admin/users           |
 | PUT    | /api/admin/users/{id}/role |
 | POST   | /api/admin/register        |
+
 
 ````json
 
