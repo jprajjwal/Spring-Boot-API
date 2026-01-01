@@ -35,29 +35,38 @@ This project demonstrates real-world backend design patterns used in product-bas
 ---
 ## 🧱 Project Structure
 
-com.prajjwal.SpringApplication
-├── Controller
-│ ├── AuthController.java
-│ ├── ProductController.java
-│ ├── AdminUserController.java
-│ └── UserRegister.java
-├── Services
-│ ├── ProductService.java
-│ └── UserService.java
-├── Repository
-│ ├── ProductRepository.java
-│ └── UserRepository.java
-├── Model
-│ ├── UserEntity.java
-│ ├── Product.java
-│ ├── JwtFilter.java
-│ └── JwtUtility.java
-├── DTO
-│ └── RoleUpdateRequest.java
-├── config
-│ └── SecurityConfig.java
-└── resources
-└── static
+Spring-Boot-API
+├── src
+│ ├── main
+│ │ ├── java
+│ │ │ └── com.prajjwal.DemoSpring
+│ │ │ ├── Controller
+│ │ │ │ ├── AuthController.java
+│ │ │ │ ├── ProductController.java
+│ │ │ │ ├── AdminUserController.java
+│ │ │ │ └── UserRegister.java
+│ │ │ ├── Services
+│ │ │ │ ├── ProductService.java
+│ │ │ │ └── UserService.java
+│ │ │ ├── Repository
+│ │ │ │ ├── ProductRepository.java
+│ │ │ │ └── UserRepository.java
+│ │ │ ├── Model
+│ │ │ │ ├── UserEntity.java
+│ │ │ │ ├── Product.java
+│ │ │ │ ├── JwtFilter.java
+│ │ │ │ └── JwtUtility.java
+│ │ │ ├── DTO
+│ │ │ │ └── RoleUpdateRequest.java
+│ │ │ └── config
+│ │ │ └── SecurityConfig.java
+│ │ └── resources
+│ │ ├── static
+│ │ └── application.properties.example
+│ └── test
+├── pom.xml
+├── README.md
+└── .gitignore
 
 
 ---
@@ -105,33 +114,25 @@ POST /auth/login
 #### Signup
 
 POST /signup/register
+
 👤 User APIs (JWT Required)
 
-Get all products
-GET /api/user/product
-
-Get product by ID
-GET /api/user/product/{id}
-
-Add product
-POST /api/user/product
-
-Update product
-PUT /api/user/product
-
-Search product
-GET /api/user/product/search?name=phone&minPrice=1000
+| Method | Endpoint                                          |
+| ------ | ------------------------------------------------- |
+| GET    | /api/user/product                                 |
+| GET    | /api/user/product/{id}                            |
+| POST   | /api/user/product                                 |
+| PUT    | /api/user/product                                 |
+| GET    | /api/user/product/search?name=phone&minPrice=1000 |
 
 #### Admin APIs (ADMIN Role Required)
 
-Delete product
-DELETE /api/admin/product/{id}
-
-View all users
-GET /api/admin/users
-
-Change user role
-PUT /api/admin/users/{id}/role
+| Method | Endpoint                   |
+| ------ | -------------------------- |
+| DELETE | /api/admin/product/{id}    |
+| GET    | /api/admin/users           |
+| PUT    | /api/admin/users/{id}/role |
+| POST   | /api/admin/register        |
 
 ````json
 
@@ -140,5 +141,13 @@ PUT /api/admin/users/{id}/role
 }
 ````
 
-Register admin
-POST /api/admin/register
+## ⚙️ Configuration
+
+Sensitive configuration files are not committed.
+
+Steps to run locally:
+1. Copy `application.properties.example`
+2. Rename it to `application.properties`
+3. Update DB credentials & secrets
+4. Run the application
+
